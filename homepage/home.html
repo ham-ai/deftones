@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <title>Deftones</title>
 </head>
 <body>
@@ -16,25 +17,29 @@
         <div class="albums">Albums</div>
         <div class="about">About</div>
     </nav>
-    <div class="slide-show">        
-        <ul class="slides-list">
-            <li class="slide">
-                <img src="../imgs/slides-def3.png" alt="">
-            </li>
-            <li class="slide">
-                <img src="../imgs/slides-title.png" alt="">
-            </li>
-            <li class="slide">
-                <img src="../imgs/slides-ohms.png" alt="">
-            </li>
-            <li class="slide">
-                <img src="../imgs/slides-sextape.png" alt="">
-            </li>
-            <li class="slide">
-                <img src="../imgs/slides-around.png" alt="">
-            </li>
-        </ul>
+
+    <div class="container">
+        <div class="swiper">
+            <!-- Additional required  wrapper  -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="../imgs/slides-def3.png"></div>
+                <div class="swiper-slide"><img src="../imgs/slides-sextape.png"></div>
+                <div class="swiper-slide"><img src="../imgs/slides-deftones.png"></div>
+                <div class="swiper-slide"><img src="../imgs/slides-title.png"></div>
+            </div>
+            
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
     </div>
+
+
     <div class="members">
 
         <div class="flip-card">
@@ -113,5 +118,28 @@
             All rights reserved 2022&copy;
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+        autoplay:{
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+          loop: true,        
+          
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },        
+          
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+        
+    </script>
 </body>
 </html>
